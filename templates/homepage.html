@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+    <style>
+  li a {
+  
+  color: rgb(17, 17, 17);
+  font-size: larger;
+  text-align: center;
+  text-decoration: none;
+
+}
+.img {
+width:80%;
+z-index: 0; }
+
+.text-over-img {
+z-index:1;
+font-size: 1.2em;
+margin-top: -100px;
+}
+div.gallery {
+  margin: 15px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #1a1919;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+</style>
+<body>
+    <div>
+      <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <div>
+          <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDXPWNSGdPetbLwvVmbtKX1-oMVEpmR4vzQ&usqp=CAU" style="width: 50%; height: 50%; border-radius: 50%;" class="rounded">
+          <h5>Safe Hospital</h5>
+        </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'homes' %}"style="margin-right: 50px;">
+                HOME
+               </b></a>            </li>
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'about' %}" style="margin-right: 50px;">
+                ABOUT US
+              </b></a>            </li>
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'special' %}" style="margin-right: 50px;">
+                SPECIALITIES
+              </b></a>            </li> 
+              <li class="nav-item">
+                <b><a class="nav-link" href="{% url 'gal' %}" style="margin-right: 50px;">
+                  GALLERY
+                </b></a>         </li>  
+                <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'con' %}" style="margin-right: 50px;">
+                    CONTACT US
+                  </b></a>        </li>  
+                  <li class="nav-item">
+                    <button  type="button" style="margin-left: 60%; color: rgb(235, 233, 233);" class="btn btn-dark nav-link" data-toggle="modal" data-target="#exampleModal" ><b>Make An Appoinment</b></button>
+                  </li> 
+                  <li class="nav-item">
+                    <button type="button" style="margin-left: 60%; " class="btn btn-dark nav-link" ><a href="{% url 'out' %}" class="nav-link" style="color: rgb(231, 235, 235); "><b>Logout</b></a></button>
+                  </li>   
+          </ul>
+        </div>  
+      </nav>
+        <!-- <nav class="navbar navbar-expand-sm">
+          <div>
+            <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDXPWNSGdPetbLwvVmbtKX1-oMVEpmR4vzQ&usqp=CAU" style="width: 50%; height: 50%; border-radius: 50%;" class="rounded">
+            <h5>Safe Hospital</h5>
+          </div>
+        
+          <ul class="navbar-nav ml-auto" style="margin-right: 10%; margin-bottom:20px;">
+              <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'homes' %}"style="margin-right: 50px;">
+                   HOME
+                  </b></a>
+              </li>
+              <b><li class="nav-item" style="margin-right: 50px;">
+                <a class="nav-link" href="{% url 'about' %}">
+                  ABOUT US
+                </b></a>
+            </li>
+             
+              <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'special' %}" style="margin-right: 50px;">
+                    SPECIALITIES
+                  </b></a>
+              </li>
+              <li class="nav-item">
+                <b><a class="nav-link" href="{% url 'gal' %}" style="margin-right: 50px;">
+                  GALLERY
+                </b></a>
+            </li>
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'con' %}" style="margin-right: 50px;">
+                CONTACT US
+              </b></a>
+          </li>
+          <li class="nav-item">
+            <button type="button" style="margin-left: 60%;" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">Make An Appoinment</button>
+
+        </li>
+        <li class="nav-item">
+          <button type="button" style="margin-left: 60%;" class="btn btn-outline-dark" ><a href="{% url 'out' %}">Logout</a></button>
+
+      </li>
+          </ul>
+      </nav> -->
+      <div>
+        <img src="https://w0.peakpx.com/wallpaper/315/432/HD-wallpaper-medical-hospital.jpg" width="100%" style="opacity: 0.5;">
+        <h1 style="color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; text-align: center; padding-top: 30px;">WELCOME TO SAFE  HOSPITAL</h1>  
+      </div>
+      <section id="info-4" class="wide-50 info-section division" style="margin-top: 70px;">
+        <div class="container">
+          <div class="top-row mb-80">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-6">
+                <div class="info-4-img text-center wow fadeInUp" data-wow-delay="0.6s">
+                  <img class="img-fluid" src="https://thumbs.dreamstime.com/b/doctor-leading-medical-blurry-hospital-background-doctor-leading-medical-blurry-hospital-background-130587421.jpg" alt="info-image">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="txt-block pc-30 wow fadeInUp" data-wow-delay="0.4s">
+                  <span style="color: darkblue;"><b>Welcome to The best hospital</b></span><h3 style="color: rgb(10, 10, 10); font-size:xx-large;"><b>With Innovative Approach to Treatment</b></h3>
+                  <p style="text-align:justify; color: rgb(17, 17, 17);font-size: large;">Late V.N Nair, the founder of our hospital and a Singapore returnee with his first hand knowledge in the field started the existing hospital under name &amp; style "Chandramathy Amma Memorial Hospital" some 30 year before.
+                    Though started in a simple way as a clinic by his in-law Dr. M Chandrasekharan, as a time rolled, by 1981 the hospital had specialists in almost all branches including Ophthalmology, Gynaecology, ENT, General Surgery etc.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <section id="doctors-1" class="wide-40 doctors-section division">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 section-title">
+						<h1 style="text-align: center; margin-top: 50px; color: rgb(20, 20, 20);">Total Health Care Solutions</h1>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://static.vecteezy.com/system/resources/previews/001/511/502/original/male-doctor-icon-free-vector.jpg" alt=Dr.M Chandrasekharan width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(22, 22, 24);">Top Level Doctors</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://static.vecteezy.com/system/resources/thumbnails/001/511/645/small/lab-microscope-icon-free-vector.jpg" alt=Dr.Rema Varma width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(25, 25, 26);">Modern Equipment</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://media.istockphoto.com/id/986035762/vector/hospital-bed-icon.jpg?s=612x612&w=0&k=20&c=Qak1IzMqd5PNccC3YFsZQyVj27p4mBGUV2Ys3_sp6QM=" alt=Dr.Anita Jaidev width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(13, 13, 14);">Qualified Facilities</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://thumbs.dreamstime.com/b/stress-hospital-icon-outline-stress-hospital-vector-icon-web-design-isolated-white-background-stress-hospital-icon-outline-195415846.jpg" alt=Dr.Sreenadh K R width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(23, 23, 24);">Professional Services</h5></h5>
+         </div>
+       </div>
+     </div>				</div>
+				
+		</section>
+<section id="info-4" class="wide-50 info-section division" style="margin-top: 100px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1 section-title">
+				<h1 style="text-align: center;">Facilities</h1>
+				<p style="text-align: center;">The best Facilities that we are offering.
+				</p>
+			</div>
+		</div>
+		<div id="pricing-2" class="pricing-section division" style="margin-top: 50px;">
+			<div class="row pricing-row">
+				<div class="col-md-6">
+					<div class="pricing-table mb-40">
+						<table class="table table-hover">
+							<thead>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td><strong> Full Fledged Lab, X-ray, Pharmacy, Ultra Sonography ICU &amp; NICU unit </strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td><strong>Round the clock emergency service with trauma care</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td><strong>G.l. Endoscopy, (High Definition Laparoscopic Unit) , Lens 4K/Lens HD for Laparoscopy &amp; Arthroscopy procedure</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td><strong>Painless Labour</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<td><strong>Endoscopic nasal surgery</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">6</th>
+									<td><strong>Physiotherapy</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">7</th>
+									<td><strong>Non- Invasive Cardiac Lab (TMT, Echo)</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">8</th>
+									<td><strong>Fully equipped operation Theatre with experienced team</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">9</th>
+									<td><strong>C-Arm Image Intensifier</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">10</th>
+									<td><strong>Ambulance Service</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">11</th>
+									<td><strong>Sports Surgery / Arthroscopy</strong></td>
+									<td></td>
+								</tr>
+								<tr class="last-tr">
+									<th scope="row">12</th>
+									<td><strong>OAE Test</strong></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="pricing-table mb-40">
+						<table class="table table-hover">
+							<thead>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td><strong>Cataract Surgery with Phaco Emulsification &amp; Glaucoma Work Up</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td><strong>Joint replacement Surgeries / All regular Orthopaedic Surgeries.</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td><strong>E'ndoscopic nasal surgery (FESS)/ Micro Ear Surgery.</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td><strong>Rigid Endoscopy/ Rhinoplasty</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<td><strong>All regular General &amp; Thoracic Surgery / Orthopaedics and ENT Surgery</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">6</th>
+									<td><strong>Cosmetic Surgery &amp; Procedures</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">7</th>
+									<td><strong>Dental Surgeries</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">8</th>
+									<td><strong>Cashless / Mediclaim Facility Available</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">9</th>
+									<td><strong>Pulmonary Function Test (PFT)</strong></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">10</th>
+									<td><strong>Health Check - Up Package</strong>
+									</td>
+									<td></td>
+								</tr>
+								<tr class="last-tr">
+									<th scope="row">11</th>
+									<td><strong>Neurology OPD</strong>
+									</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div></div></section>
+
+
+
+
+    <section id="doctors-1" class="wide-40 doctors-section division">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 section-title">
+						<h1 style="text-align: center; margin-top: 50px; color: blue;">Our Medical Specialists</h1>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://img.uxwing.com/wp-content/themes/uxwing/download/medical-science-lab/doctor-icon.png" alt=Dr.M Chandrasekharan>
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(22, 22, 24);">Dr.M jgjgjgjkhkjhk</h5></h5>
+           <span class="blue-color"style="color:black">Medical Superintendant</span>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/3304/3304567.png" alt=Dr.Rema Varma>
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(25, 25, 26);">Dr.jhgjh jhgjh</h5></h5>
+           <span style="color: rgb(35, 35, 36);">Obsterics and Gynaecology</span>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://img.freepik.com/premium-vector/isolated-doctor-icon-sticker_677423-9.jpg?w=2000" alt=Dr.Anita Jaidev>
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(13, 13, 14);">Dr.ghgh jhgjhj</h5></h5>
+           <span style="color: rgb(28, 28, 29);">Obsterics and Gynaecology</span>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Male_Doctor_Flat_Icon_Vector.svg/1200px-Male_Doctor_Flat_Icon_Vector.svg.png" alt=Dr.Sreenadh K R>
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(23, 23, 24);">Dr.vvhjjgj h b</h5></h5>
+           <span style="color: rgb(31, 31, 32);">Orthopaedics</span>
+         </div>
+       </div>
+     </div>				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="all-doctors mb-40">
+              <button type="button" class="btn btn-outline-primary" style="margin-top: 70px;">Meet All Doctors</button>						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+  
+
+<!-- footer -->
+
+
+<div class="footer-middle" style="background-color: black; margin-top: 400px;"> 
+  <div class="container">
+    <div class="row">
+                                                            <div class="col-sm-12 col-md-6 col-lg-3 ">
+            <div id="about_us-widget-9" class="widget about_us">			<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+                                </div>
+  <div class="footer-address">
+                                            </div>
+</div>
+</div>	
+
+</div><div id="about_us-widget-5" class="widget about_us">			<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDXPWNSGdPetbLwvVmbtKX1-oMVEpmR4vzQ&usqp=CAU"  alt="" style="padding-top: 30px; width: 100px; height: 100px; margin-right: 60%;">    
+       <br><p style="color: beige;">KNA PLAZA, Kundannoor<br>
+        Kochi, Kerala 682304</p> 
+        <div class="text-m-small line-height-24 text-medium-gray"> <a href="" class="text-medium-gray">safehospital@gmail.com</a></div>
+
+                            <div class="text-m-small line-height-24 text-medium-gray" style="color: antiquewhite;">Phone: +91 999 546 9222  </div>
+
+                            <div class="text-m-small line-height-24 text-medium-gray" style="color: antiquewhite;">Phone: +91 996 199 8444 </div>             
+      
+                </div>
+                
+
+</div>
+</div>	
+
+</div><div id="nav_menu-3" class="widget widget_nav_menu"><div class="menu-social-menu-container"><ul id="menu-social-menu" class="menu">
+</ul></div></div>										</div>
+          
+                                                              <div class="col-sm-12 col-md-6 col-lg-3 ">
+            <div id="nav_menu-2" class="widget widget_nav_menu"><h2 class="widget-title" style="color: whitesmoke;">Quick Links</h2><div class="menu-our-company-container"><ul id="menu-our-company" class="menu"><li id="menu-item-423" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-423"><a href="#"  style="color: whitesmoke;">Home</a></li>
+<li id="menu-item-424" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-424"><a href="#" style="color: whitesmoke;">Contact</a></li>
+<li id="menu-item-425" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-425"><a href="#"  style="color: whitesmoke;">Gallery</a></li>
+<li id="menu-item-426" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-426"><a href="#"  style="color: whitesmoke;">Bookings</a></li>
+<li id="menu-item-427" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-427"><a href="#"  style="color: whitesmoke;">Specialities</a></li>
+</ul></div></div>										</div>
+          
+                                                              <div class="col-sm-12 col-md-6 col-lg-3 ">
+            <div id="about_us-widget-3" class="widget about_us"><h2 class="widget-title" style="color: antiquewhite;">Departments</h2>
+              <ul class="list-unstyled" >
+                                  
+                <li style="color: antiquewhite;"><a class="text-medium" href=""  style="line-height:36px; color: antiquewhite;">Gynaecology</a></li>
+                  
+                <li><a class="text-medium" href=""  style="line-height:36px;color: antiquewhite;">Orthopaedics</a></li>
+                  
+                <li><a class="text-medium" href=""  style="line-height:36px;color: antiquewhite;">Paediatrics</a></li>
+                  
+                
+                  </ul>
+                
+                  <div class="col-lg-3 footer-sm col-md-4 col-sm-6 widget margin-30px-top" style="margin-left: 150px;">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15719.85030919971!2d76.3183881!3d9.9370718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa84056d3a732a1ae!2sCrystalline%20Photography!5e0!3m2!1sen!2sin!4v1664373217895!5m2!1sen!2sin" width="500" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+                </div>
+            		<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+                      
+                </div>
+                
+  <div class="footer-address">
+                  <div class="footer_s_inner"> 
+      <div class="footer-sociala-icon">
+        <i class="fa fa-home"></i>
+      </div>									
+      <div class="footer-sociala-info">				
+      </div> 
+    </div> 
+                                <div class="footer_s_inner"> 
+      <div class="footer-sociala-icon">
+        <i class="fa fa-phone"></i>
+      </div> 									
+      
+    </div>
+                              
+      <div class="footer_s_inner"> 
+        <div class="footer-sociala-icon"> 
+          <i class="fa fa-globe"></i>
+        </div> 
+        <div class="footer-sociala-info">  
+        </div>
+      </div>
+                </div>
+</div>
+</div>	
+
+</div>										</div>
+          
+                                                              <div class="col-sm-12 col-md-6 col-lg-3 last">
+            <div id="about_us-widget-6" class="widget about_us">		<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+                      
+                </div>
+  <div class="footer-address">
+                                            </div>
+</div>
+</div>	
+
+
+
+
+      
+
+
+</div>
+</div>
+</div>
+<section class="cprght_ftr" style="background-color:rgb(19, 18, 18);">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-5">
+              <div class="pt-2" style="color: #ccc;">© Copyright 2023.  Hospitals Group. All Rights Reserved.</div>
+          </div>
+          
+          <div class="col-md-4">
+              <ul class="nav ms-auto"  style="color: #ccc;">
+
+           
+                  <li class="nav-item"  style="color: #ccc;"><a href="" >Privacy policy</a> </li>
+                  <li class="nav-item"  style="color: #ccc;"><a href="" >Disclaimer</a></li>
+                  <li class="nav-item " style="color: #ccc;"><a href="">Contact</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book An Appoinment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <label>Full Name</label>
+      <input type="text" placeholder="enter your name" class="form-control">
+      <label>Age</label>
+      <input type="text" placeholder="enter your age" class="form-control">
+      <label>Gender</label>
+      <input type="radio" name="gen"><label>Male</label> 
+      <input type="radio" name="gen"><label>Female</label><br>
+      <label>Address</label>
+      <textarea class="form-control" placeholder="enter your address" rows="4" cols="50"></textarea>
+      <label>Department</label>
+      <input type="text" class="form-control">
+      <label>Doctor Name</label>
+      <input type="text" class="form-control">
+      <label>Are you Sure to Confirm Bookings ?</label>
+      <input type="radio" name="sure"><label>Yes</label>
+      <input type="radio" name="sure"><label>No</label>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

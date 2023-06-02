@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+     li a {
+    
+    color: rgb(17, 17, 17);
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+  }
+    .img {
+width:80%;
+z-index: 0; }
+
+.text-over-img {
+z-index:1;
+font-size: 1.2em;
+margin-top: -100px;
+}
+div.gallery {
+  margin: 15px;
+  border: 1px solid #767579;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #1e10da;
+  border-radius: 2px;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+</style>
+<body>
+    <div>
+      <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <div>
+          <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDXPWNSGdPetbLwvVmbtKX1-oMVEpmR4vzQ&usqp=CAU" style="width: 50%; height: 50%; border-radius: 50%;" class="rounded">
+          <h5>Safe Hospital</h5>
+        </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'homes' %}"style="margin-right: 50px;">
+                HOME
+               </b></a>            </li>
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'about' %}" style="margin-right: 50px;">
+                ABOUT US
+              </b></a>            </li>
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'special' %}" style="margin-right: 50px;">
+                SPECIALITIES
+              </b></a>            </li> 
+              <li class="nav-item">
+                <b><a class="nav-link" href="{% url 'gal' %}" style="margin-right: 50px;">
+                  GALLERY
+                </b></a>         </li>  
+                <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'con' %}" style="margin-right: 50px;">
+                    CONTACT US
+                  </b></a>        </li>  
+                  <li class="nav-item">
+                    <button  type="button" style="margin-left: 60%; color: rgb(235, 231, 231);" class="btn btn-dark nav-link" data-toggle="modal" data-target="#exampleModal" ><b>Make An Appoinment</b></button>
+                  </li> 
+                  <li class="nav-item">
+                    <button type="button" style="margin-left: 60%; " class="btn btn-dark nav-link" ><a href="{% url 'out' %}" class="nav-link" style="color: rgb(237, 241, 241); "><b>Logout</b></a></button>
+                  </li>   
+          </ul>
+        </div>  
+      </nav>
+      <div class="container">
+		
+		<div class="top-row mb-80">
+			<div class="row d-flex align-items-center">
+				<!-- INFO IMAGE -->
+				<div class="col-lg-6">
+					<div class="info-4-img text-center wow fadeInUp" data-wow-delay="0.6s">
+						<img class="img-fluid" src="https://th-thumbnailer.cdn-si-edu.com/Eaei75J6_mySD_k8hla28--tpZU=/fit-in/1600x0/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler%2Fb4%2Fc6%2Fb4c65fd0-01ba-4262-9b3d-f16b53bca617%2Fistock-172463472.jpg" alt="info-image" style="border: black; border-radius: 1px;">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="info-4-img text-center wow fadeInUp" data-wow-delay="0.6s">
+						<img class="img-fluid" src="https://img.rawpixel.com/private/static/images/website/2022-05/fl48132011958-public-image-kows9gea.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=de9d3cccda68b377ee3c016eeb6ef4dd" alt="info-image">
+					</div>
+				</div>
+			</div>    <!-- End row -->
+		</div>
+    <div>
+      <h1 style="text-align: center; color: black; margin-top: 70px;">SPECIALITIES</h1>
+    </div>
+    <section id="doctors-1" class="wide-40 doctors-section division">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_uO8j_PzOyVdRE-0NPUI0rEKEI_RfI_cueg&usqp=CAU" alt=Dr.M Chandrasekharan width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(22, 22, 24);">General&Laparoscopi Surgery</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://www.moolchandhealthcare.com/uploads/speciality/2018/11/455285bf2ae3d61e7d9255.png" alt=Dr.Rema Varma width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(25, 25, 26);">Obsterics & Gynaecology</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://w7.pngwing.com/pngs/40/299/png-transparent-dermatology-obstetrics-and-gynaecology-hospital-medicine-health-care-others-thumbnail.png" alt=Dr.Anita Jaidev width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(13, 13, 14);">Dermatology & Cosmatology</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://i.pinimg.com/736x/96/9f/f9/969ff9ab69cf4b4c181ad278205ddefc.jpg" alt=Dr.Sreenadh K R width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(23, 23, 24);">Anaesthesiology</h5></h5>
+         </div>
+       </div>
+     </div>				</div>
+				
+		</section>
+    <section id="doctors-1" class="wide-40 doctors-section division">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://e7.pngegg.com/pngimages/561/760/png-clipart-computer-icons-x-ray-radiology-medicine-ray-miscellaneous-logo.png" alt=Dr.M Chandrasekharan width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(22, 22, 24);">Radiology</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://www.narayanahealth.org/sites/default/files/orthopaedic-services.png" alt=Dr.Rema Varma width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(25, 25, 26);">Orthopaedics</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKal1OLNnKO2iCuxmsMJqW-eNacDsk-qDF5A&usqp=CAU" alt=Dr.Anita Jaidev width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(13, 13, 14);">Ophthalmology</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://previews.123rf.com/images/dxinerz/dxinerz1506/dxinerz150601663/41363141-ear-nose-throat-ent-icon-vector-image-can-also-be-used-for-healthcare-and-medical-suitable-for.jpg" alt=Dr.Sreenadh K R width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(23, 23, 24);">ENT</h5></h5>
+         </div>
+       </div>
+     </div>				</div>
+				
+		</section>
+
+    <section id="doctors-1" class="wide-40 doctors-section division">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://childhoodsmiles.com/wp-content/uploads/2021/07/Icon.png" alt=Dr.M Chandrasekharan width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(22, 22, 24);">Dentistry OPD</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://www.iconpacks.net/icons/2/free-plastic-surgery-icon-1664-thumb.png" alt=Dr.Rema Varma width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(25, 25, 26);">Plastic Surgery</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://img.pikbest.com/png-images/world-diabetes-day_6098220.png!bw700" alt=Dr.Anita Jaidev width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(13, 13, 14);">Diabetlogy</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://i.pinimg.com/236x/fd/3c/65/fd3c65c6eb84f7c4bbdc7130094deb39.jpg" alt=Dr.Sreenadh K R width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(23, 23, 24);">Pulomonology</h5></h5>
+         </div>
+       </div>
+     </div>				</div>
+				
+		</section>
+    <section id="doctors-1" class="wide-40 doctors-section division">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://w7.pngwing.com/pngs/639/578/png-transparent-pediatrics-physician-child-medicine-pediatric-nursing-child-pediatrics-physician-child-thumbnail.png" alt=Dr.M Chandrasekharan width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(22, 22, 24);">Paediatrics</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://i.pinimg.com/originals/ec/b9/db/ecb9db6df166171d6ba3cb94fdb85a79.png" alt=Dr.Rema Varma width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(25, 25, 26);">General Medicine</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/421/421278.png" alt=Dr.Anita Jaidev width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(13, 13, 14);">Phychiatry</h5></h5>
+         </div>
+       </div>
+     </div><div class="col-md-6 col-lg-3">
+       <div class="doctor-1">
+         <div class="hover-overlay text-center">
+         <img class="img-fluid" src="https://assets.yourpractice.online/589/knee-icon.png" alt=Dr.Sreenadh K R width="250" height="250">
+           <div class="item-overlay"></div>
+           <div class="profile-link">
+           </div>
+         </div>
+         <div class="doctor-meta">
+          <h5 class="h5-sm steelblue-color"><h5 style="color: rgb(23, 23, 24);">Sports Surgery & Arthroscopy</h5></h5>
+         </div>
+       </div>
+     </div>				</div>
+				
+		</section>
+    
+   
+<div>
+  <h1 style="text-align: center; margin-top: 100px;">Super Specialities</h1>
+</div>
+<div class="gallery" style="margin-left: 80px; margin-top: 70px;box-shadow: 10px 10px 5px rgb(135, 137, 138); border-radius: 25px; border: 10px solid;">
+  <img src="https://cdn-icons-png.flaticon.com/512/387/387577.png" alt="Cinque Terre" width="50" height="50">
+  <p style="font-size: larger; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">Cardiology</p>
+</div>
+<div class="gallery" style="margin-left: 80px; margin-top: 70px;box-shadow: 10px 10px 5px rgb(135, 137, 138); border-radius: 25px; border: 10px solid;">
+  <img src="https://cdn-icons-png.flaticon.com/512/354/354267.png" alt="Cinque Terre" width="50" height="50">
+  <p style="font-size: larger; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  text-align: center;">Nephrology</p>
+</div>
+<div class="gallery" style="margin-left: 80px; margin-top: 70px;box-shadow: 10px 10px 5px rgb(135, 137, 138);border-radius: 25px; border: 10px solid;">
+  <img src="https://w7.pngwing.com/pngs/39/412/png-transparent-federal-government-of-the-united-states-usa-gov-social-security-administration-urology-logo-united-states-circle.png" alt="Cinque Terre" width="50" height="50">
+  <p style="font-size: larger; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  text-align: center;">Urology</p>
+</div>
+<div class="gallery" style="margin-left: 80px; margin-top: 70px;box-shadow: 10px 10px 5px rgb(135, 137, 138);border-radius: 25px; border: 10px solid;">
+  <img src="https://png.pngtree.com/png-vector/20190505/ourmid/pngtree-vector-stomach-icon-png-image_1023456.jpg" alt="Cinque Terre" width="50" height="50">
+  <p style="font-size: larger; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  text-align: center;">Gastroenterology</p>
+</div>
+<div class="gallery" style="margin-left: 80px; margin-top: 70px;box-shadow: 10px 10px 5px rgb(135, 137, 138); border-radius: 25px; border: 10px solid;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2d1iWEj7azSWDXx_JC8zV87HcsHoVjb3GGrwUBLL9tCCSrTBGTC9bLvvSYHtPJTJozrk&usqp=CAU" alt="Cinque Terre" width="50" height="50">
+  <p style="font-size: larger; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  text-align: center;">Neurology</p>
+</div>
+
+
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book An Appoinment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <label>Full Name</label>
+      <input type="text" placeholder="enter your name" class="form-control">
+      <label>Age</label>
+      <input type="text" placeholder="enter your age" class="form-control">
+      <label>Gender</label>
+      <input type="radio" name="gen"><label>Male</label> 
+      <input type="radio" name="gen"><label>Female</label><br>
+      <label>Address</label>
+      <textarea class="form-control" placeholder="enter your address" rows="4" cols="50"></textarea>
+      <label>Department</label>
+      <input type="text" class="form-control">
+      <label>Doctor Name</label>
+      <input type="text" class="form-control">
+      <label>Are you Sure to Confirm Bookings ?</label>
+      <input type="radio" name="sure"><label>Yes</label>
+      <input type="radio" name="sure"><label>No</label>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

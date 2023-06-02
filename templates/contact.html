@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    li a {
+    
+    color: rgb(17, 17, 17);
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    }
+</style>
+<body>
+    <div>
+      <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <div>
+          <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDXPWNSGdPetbLwvVmbtKX1-oMVEpmR4vzQ&usqp=CAU" style="width: 50%; height: 50%; border-radius: 50%;" class="rounded">
+          <h5>Safe Hospital</h5>
+        </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'homes' %}"style="margin-right: 50px;">
+                HOME
+               </b></a>            </li>
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'about' %}" style="margin-right: 50px;">
+                ABOUT US
+              </b></a>            </li>
+            <li class="nav-item">
+              <b><a class="nav-link" href="{% url 'special' %}" style="margin-right: 50px;">
+                SPECIALITIES
+              </b></a>            </li> 
+              <li class="nav-item">
+                <b><a class="nav-link" href="{% url 'gal' %}" style="margin-right: 50px;">
+                  GALLERY
+                </b></a>         </li>  
+                <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'con' %}" style="margin-right: 50px;">
+                    CONTACT US
+                  </b></a>        </li>  
+                  <li class="nav-item">
+                    <button  type="button" style="margin-left: 60%; color: rgb(255, 250, 250);" class="btn btn-dark nav-link" data-toggle="modal" data-target="#exampleModal" ><b>Make An Appoinment</b></button>
+                  </li> 
+                  <li class="nav-item">
+                    <button type="button" style="margin-left: 60%; " class="btn btn-dark nav-link" ><a href="{% url 'out' %}" class="nav-link" style="color: rgb(234, 241, 241); "><b>Logout</b></a></button>
+                  </li>   
+          </ul>
+        </div>  
+      </nav>
+<div style="background-image: url('https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?w=2000');">
+      <section  style="padding-top: 40px;">
+        <div class="container">
+            <div class="row">
+                 <div class="col-lg-7">
+                     <div class="row">
+                        
+                         <div class="col-md-6">
+                             <div class="contact-box mb-40">
+                              <div>
+                                <h1 style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;">Contact Us</h1>
+                              </div>
+                              <div>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125531.64774481405!2d76.14084830995756!3d10.511376971476984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ee15ed42d1bb%3A0x82e45aa016ca7db!2sThrissur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1685571341667!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                              </div>
+                               
+                                <h5 class="h5-sm">Safe Hospital</h5>
+                                <p>Thrissur - 12,</p>
+                                <p> Kerala, India</p>
+            <p>Phone : 7692 9016761</p>
+             <p> 0487 56567575</p>
+            <p>Email : <a href="">jghjhosp@hotmail.com</a></p>
+                              <p>Website: www.safehospital.in</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>	
+                
+                 <div class="col-lg-5">
+                     <div class="form-holder mb-40">
+                        <form>
+                           
+                            <div class="col-md-12">
+                                <input type="text"  class="form-control name" placeholder="Enter Your Name*" required>
+                            </div><br>
+                            <div  class="col-md-12">
+                                <input type="email" class="form-control email" placeholder="Enter Your Email*" required>
+                            </div><br>
+                            <div  class="col-md-12">
+                                <input type="tel"  class="form-control phone" placeholder="Enter Your Phone Number*" required>
+                            </div><br>
+                            
+                            <div class="col-md-12 input-patient">
+                                <select class="custom-select patient" required>
+                                    <option value="">Have You Visited Us Before?</option>
+                                    <option value="New Patient">New Patient</option>
+                                    <option value="Returning Patient">Returning Patient</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div><br>
+                            <div  class="col-md-12">
+                                <input type="text"  class="form-control subject" placeholder="Subject*" required>
+                            </div><br>
+                            <div  class="col-md-12 input-message">
+                                <textarea class="form-control message"  rows="6" placeholder="Your Message ..." required></textarea>
+                            </div><br>
+                            
+                            <div class="col-lg-12 mt-15 form-btn">
+                                <button type="submit" name="msgSubmit" class="btn  btn-outline-primary">Send Your Message</button>
+                            </div>
+                        </form>
+                     </div>
+                 </div> 	
+             </div>	
+            </div>
+        </div>	 
+    </section>
+<!-- footer -->
+
+
+<div class="footer-middle" style="background-color: black; margin-top: 400px;"> 
+  <div class="container">
+    <div class="row">
+                                                            <div class="col-sm-12 col-md-6 col-lg-3 ">
+            <div id="about_us-widget-9" class="widget about_us">			<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+                                </div>
+  <div class="footer-address">
+                                            </div>
+</div>
+</div>	
+
+</div><div id="about_us-widget-5" class="widget about_us">			<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSDXPWNSGdPetbLwvVmbtKX1-oMVEpmR4vzQ&usqp=CAU"  alt="" style="padding-top: 30px; width: 100px; height: 100px; margin-right: 60%;">    
+       <br><p style="color: beige;">KNA PLAZA, Kundannoor<br>
+        Kochi, Kerala 682304</p> 
+        <div class="text-m-small line-height-24 text-medium-gray"> <a href="" class="text-medium-gray">safehospital@gmail.com</a></div>
+
+                            <div class="text-m-small line-height-24 text-medium-gray" style="color: antiquewhite;">Phone: +91 999 546 9222  </div>
+
+                            <div class="text-m-small line-height-24 text-medium-gray" style="color: antiquewhite;">Phone: +91 996 199 8444 </div>             
+      
+                </div>
+                
+
+</div>
+</div>	
+
+</div><div id="nav_menu-3" class="widget widget_nav_menu"><div class="menu-social-menu-container"><ul id="menu-social-menu" class="menu">
+</ul></div></div>										</div>
+          
+                                                              <div class="col-sm-12 col-md-6 col-lg-3 ">
+            <div id="nav_menu-2" class="widget widget_nav_menu"><h2 class="widget-title" style="color: whitesmoke;">Quick Links</h2><div class="menu-our-company-container"><ul id="menu-our-company" class="menu"><li id="menu-item-423" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-423"><a href="#"  style="color: whitesmoke;">Home</a></li>
+<li id="menu-item-424" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-424"><a href="#" style="color: whitesmoke;">Contact</a></li>
+<li id="menu-item-425" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-425"><a href="#"  style="color: whitesmoke;">Gallery</a></li>
+<li id="menu-item-426" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-426"><a href="#"  style="color: whitesmoke;">Bookings</a></li>
+<li id="menu-item-427" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-427"><a href="#"  style="color: whitesmoke;">Specialities</a></li>
+</ul></div></div>										</div>
+          
+                                                              <div class="col-sm-12 col-md-6 col-lg-3 ">
+            <div id="about_us-widget-3" class="widget about_us"><h2 class="widget-title" style="color: antiquewhite;">Departments</h2>
+              <ul class="list-unstyled" >
+                                  
+                <li style="color: antiquewhite;"><a class="text-medium" href=""  style="line-height:36px; color: antiquewhite;">Gynaecology</a></li>
+                  
+                <li><a class="text-medium" href=""  style="line-height:36px;color: antiquewhite;">Orthopaedics</a></li>
+                  
+                <li><a class="text-medium" href=""  style="line-height:36px;color: antiquewhite;">Paediatrics</a></li>
+                  
+                
+                  </ul>
+                
+                  <div class="col-lg-3 footer-sm col-md-4 col-sm-6 widget margin-30px-top" style="margin-left: 150px;">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15719.85030919971!2d76.3183881!3d9.9370718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa84056d3a732a1ae!2sCrystalline%20Photography!5e0!3m2!1sen!2sin!4v1664373217895!5m2!1sen!2sin" width="500" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+                </div>
+            		<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+                      
+                </div>
+                
+  <div class="footer-address">
+                  <div class="footer_s_inner"> 
+      <div class="footer-sociala-icon">
+        <i class="fa fa-home"></i>
+      </div>									
+      <div class="footer-sociala-info">				
+      </div> 
+    </div> 
+                                <div class="footer_s_inner"> 
+      <div class="footer-sociala-icon">
+        <i class="fa fa-phone"></i>
+      </div> 									
+      
+    </div>
+                              
+      <div class="footer_s_inner"> 
+        <div class="footer-sociala-icon"> 
+          <i class="fa fa-globe"></i>
+        </div> 
+        <div class="footer-sociala-info">  
+        </div>
+      </div>
+                </div>
+</div>
+</div>	
+
+</div>										</div>
+          
+                                                              <div class="col-sm-12 col-md-6 col-lg-3 last">
+            <div id="about_us-widget-6" class="widget about_us">		<!-- About Widget -->
+<div class="about-footer">
+<div class="footer-widget address">
+  <div class="footer-logo">
+                      
+                </div>
+  <div class="footer-address">
+                                            </div>
+</div>
+</div>	
+
+
+
+
+      
+
+
+</div>
+</div>
+</div>
+<section class="cprght_ftr" style="background-color:rgb(19, 18, 18);">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-5">
+              <div class="pt-2" style="color: #ccc;">© Copyright 2023.  Hospitals Group. All Rights Reserved.</div>
+          </div>
+          
+          <div class="col-md-4">
+              <ul class="nav ms-auto"  style="color: #ccc;">
+
+           
+                  <li class="nav-item"  style="color: #ccc;"><a href="" >Privacy policy</a> </li>
+                  <li class="nav-item"  style="color: #ccc;"><a href="" >Disclaimer</a></li>
+                  <li class="nav-item " style="color: #ccc;"><a href="">Contact</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+  <!-- modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Book An Appoinment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <label>Full Name</label>
+        <input type="text" placeholder="enter your name" class="form-control">
+        <label>Age</label>
+        <input type="text" placeholder="enter your age" class="form-control">
+        <label>Gender</label>
+        <input type="radio" name="gen"><label>Male</label> 
+        <input type="radio" name="gen"><label>Female</label><br>
+        <label>Address</label>
+        <textarea class="form-control" placeholder="enter your address" rows="4" cols="50"></textarea>
+        <label>Department</label>
+        <input type="text" class="form-control">
+        <label>Doctor Name</label>
+        <input type="text" class="form-control">
+        <label>Are you Sure to Confirm Bookings ?</label>
+        <input type="radio" name="sure"><label>Yes</label>
+        <input type="radio" name="sure"><label>No</label>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
